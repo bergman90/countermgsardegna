@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatori</title>
+    <title>Un cronometro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="main-counter-container">
-        <h1>Tempo trascorso:</h1>
-        <div id="main-counter"></div>
-    </div>
+    <header>
+        <h1></h1>
+    </header>
+    <main>
+        <section id="main-counter-container" class="common-counter-style">
+            <h2>Tempo trascorso senza AIR:</h2>
+            <div id="main-counter"></div>
+        </section>
 
-    <div id="other-counters">
-        <div class="counter-item">
-            <h2>Tempo di ritardo pagamento dei vaccini</h2>
-            <div class="counter" id="vaccine-counter"></div>
-            <p>Record da battere: <strong>180 giorni</strong></p>
-        </div>
-    </div>
-
+        <section id="other-counters">
+            <div class="counter-item common-counter-style">
+                <h3>Tempo di ritardo pagamento dei vaccini</h3>
+                <div class="counter" id="vaccine-counter"></div>
+                <p>Record da battere: <strong>180 giorni</strong></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Un semplice cronometro... Tutti i diritti riservati.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

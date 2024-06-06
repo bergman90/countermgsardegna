@@ -9,13 +9,15 @@ body {
     background-color: #f0f0f0;
 }
 
-#main-counter-container {
+.common-counter-style {
     text-align: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
 }
 
 #main-counter {
@@ -31,27 +33,17 @@ body {
     align-items: flex-start;
 }
 
-.counter-item {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-.counter-item h2 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
 .counter {
     font-size: 1.5em;
     color: #333;
     margin: 10px 0;
 }
 
+.counter-item h3, .common-counter-style h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
 .counter-item p {
     margin: 0;
 }
-
