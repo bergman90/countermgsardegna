@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatore</title>
+    <title>Contatori</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="counter-container">
+    <div id="main-counter-container">
         <h1>Tempo trascorso:</h1>
-        <div id="counter"></div>
+        <div id="main-counter"></div>
     </div>
+
+    <div id="other-counters">
+        <div class="counter-item">
+            <h2>Tempo di ritardo pagamento dei vaccini</h2>
+            <div class="counter" id="vaccine-counter"></div>
+            <p>Record da battere: <strong>180 giorni</strong></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
