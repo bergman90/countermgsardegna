@@ -1,28 +1,51 @@
-// Imposta la data di inizio per il contatore principale
-const mainStartDate = new Date("2018-09-30T00:00:00Z");
-
-// Imposta la data di inizio per il contatore del ritardo pagamento dei vaccini
-const vaccineStartDate = new Date("2024-03-30T00:00:00Z");
-
-function updateCounter(startDate, elementId) {
+// Esempio di funzione per il contatore principale (aggiungi il tuo codice qui)
+function updateMainCounter() {
+    // Logica per il contatore principale
+    const startDate = new Date('2018-09-30T00:00:00'); // Imposta la data di inizio del contatore principale
     const now = new Date();
-    const diff = now - startDate;
+    const totalSeconds = (now - startDate) / 1000;
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    const days = Math.floor(totalSeconds / 3600 / 24);
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const minutes = Math.floor(totalSeconds / 60) % 60;
+    const seconds = Math.floor(totalSeconds) % 60;
 
-    document.getElementById(elementId).innerText = `${days} giorni ${hours} ore ${minutes} minuti ${seconds} secondi`;
+    const mainCounterElement = document.getElementById('main-counter');
+    mainCounterElement.innerHTML = `${days} giorni ${hours} ore ${minutes} minuti ${seconds} secondi`;
 }
 
-function updateAllCounters() {
-    updateCounter(mainStartDate, "main-counter");
-    updateCounter(vaccineStartDate, "vaccine-counter");
+// Funzione per il contatore di ritardo nei pagamenti dei vaccini (aggiungi il tuo codice qui)
+function updateVaccineCounter() {
+    // Logica per il contatore di ritardo nei pagamenti dei vaccini
+    const startDate = new Date('2024-03-30T00:00:00'); // Imposta la data di inizio del contatore di ritardo nei pagamenti
+    const now = new Date();
+    const totalSeconds = (now - startDate) / 1000;
+
+    const days = Math.floor(totalSeconds / 3600 / 24);
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const minutes = Math.floor(totalSeconds / 60) % 60;
+    const seconds = Math.floor(totalSeconds) % 60;
+
+    const vaccineCounterElement = document.getElementById('vaccine-counter');
+    vaccineCounterElement.innerHTML = `${days} giorni ${hours} ore ${minutes} minuti ${seconds} secondi`;
+}
+
+// Funzione per il countdown di quattro anni
+function updateCountdown() {
+    const now = new Date();
+    const targetDate = new Date(now.getFullYear() + 4, now.getMonth(), now.getDate());
+    const totalSeconds = (targetDate - now) / 1000;
+
+    const days = Math.floor(totalSeconds / 3600 / 24);
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const minutes = Math.floor(totalSeconds / 60) % 60;
+    const seconds = Math.floor(totalSeconds) % 60;
+
+    const countdownElement = document.getElementById('countdown');
+    countdownElement.innerHTML = `${days} giorni ${hours} ore ${minutes} minuti ${seconds} secondi`;
 }
 
 // Aggiorna i contatori ogni secondo
-setInterval(updateAllCounters, 1000);
-
-// Aggiorna subito i contatori alla prima visualizzazione
-updateAllCounters();
+setInterval(updateMainCounter, 1000);
+setInterval(updateVaccineCounter, 1000);
+setInterval(updateCountdown, 1000);
